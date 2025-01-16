@@ -21,8 +21,10 @@ public class Player : MonoBehaviour
 	private bool canShoot = false, facingRiht = false, lookingUp = false;
 	private short counterToDownTree = 0;
 
+	[SerializeField] Text fakelsText, healthText, temperatureText;
 	
-	private float temperature;
+	
+	public float temperature;
 	// Start is called before the first frame update
     void Start()
 	{
@@ -44,7 +46,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-		Debug.Log(canShoot);
+		UIUpdater();
 		move();
 		if(moveInput == 0 && verInput == 0)
 		{
@@ -165,7 +167,7 @@ public class Player : MonoBehaviour
 			
 			if(temperature < initialTemperature)
 			{
-				temperature++;
+				temperature += 0.05f;
 			}
 			
 		}
@@ -206,6 +208,14 @@ public class Player : MonoBehaviour
 			temperature--;
 			yield return new WaitForSeconds(1f);
 		}
+	}
+	
+	
+	public void UIUpdater()
+	{
+		healthText.text = "Health: " + Health.ToString();
+		fakelsText.text = "Fakels: " + fakels.ToString();
+		temperatureText.text = "Temperature: " + temperature.ToString();
 	}
 
 }
