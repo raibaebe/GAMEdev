@@ -205,6 +205,7 @@ Transform:
   - {fileID: 2498635703620219269}
   - {fileID: 5799156769449539018}
   - {fileID: 2108591504730660437}
+  - {fileID: 1640748273079321911}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5685216334366312721
@@ -227,6 +228,8 @@ MonoBehaviour:
   fakelon: {fileID: 2985101252896755238}
   ruka: {fileID: 2886473703906901170}
   toTreeFakelText: {fileID: 2484552319124298579, guid: 505e25c57e470d14fa16f375d8a5df44, type: 3}
+  ShootPoint: {fileID: 8836072450309194394}
+  fakelAsBullet: {fileID: 1791968366246873452, guid: 70eaff815c73c0d4b931d79d375bfb40, type: 3}
 --- !u!50 &7111550703757510388
 Rigidbody2D:
   serializedVersion: 4
@@ -456,3 +459,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8836072450309194394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1640748273079321911}
+  m_Layer: 0
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1640748273079321911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8836072450309194394}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.166, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7547865115372810951}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
