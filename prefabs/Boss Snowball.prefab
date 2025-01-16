@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 7395300217605690643}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 0, z: 0.12806214}
-  m_LocalScale: {x: 0.57, y: 0.57, z: 0.57}
+  m_LocalPosition: {x: -0.0299, y: 0.0447, z: 0.12806214}
+  m_LocalScale: {x: 1.04, y: 1.04, z: 1.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5254449218712305866}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.98490566, g: 0.5928017, b: 0.5928017, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5254449218712305866}
   - component: {fileID: 2204662019107569655}
   m_Layer: 0
-  m_Name: snowball
+  m_Name: Boss Snowball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,4 +136,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   Particles: {fileID: 4200386192366410350, guid: 970a9b3c576d2b74abe8bc8b6f7999d8, type: 3}
-  damage: 1
+  damage: 5

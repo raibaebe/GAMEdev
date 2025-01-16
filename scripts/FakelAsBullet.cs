@@ -7,6 +7,7 @@ public class FakelAsBullet : MonoBehaviour
 	public LayerMask WhatIsSolid;
 	
 	public GameObject Particles;
+	public int score;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -27,6 +28,11 @@ public class FakelAsBullet : MonoBehaviour
 			if(hitinfo.collider.GetComponent<SnowMan>() != null)
 			{
 				Destroy(hitinfo.collider.gameObject);
+				score++;
+			}
+			else if(hitinfo.collider.gameObject.GetComponent<Boss>() != null)
+			{
+				hitinfo.collider.gameObject.GetComponent<Boss>().takeDamage(1);
 			}
 		}
 

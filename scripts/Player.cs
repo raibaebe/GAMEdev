@@ -25,6 +25,12 @@ public class Player : MonoBehaviour
 	
 	
 	public float temperature;
+	
+	
+	public GameObject DeathParticles, DeathPanel, Skin;
+	
+	private bool takingFire = false;
+	
 	// Start is called before the first frame update
     void Start()
 	{
@@ -97,6 +103,19 @@ public class Player : MonoBehaviour
 			Shoot();
 			
 		}
+		
+		if(Health <= 0)
+		{
+			Death();
+		}
+		if(temperature <= 0)
+		{
+			Death();
+		}
+		if(takingFire == true)
+		{
+			temperature += 0.05f;
+		}
 	}
     
 
@@ -112,6 +131,7 @@ public class Player : MonoBehaviour
 	{
 		if(Input.GetKeyDown(KeyCode.Mouse0))
 		{
+			if(takingFire) takingFire = false;
 			Instantiate(fakelAsBullet, ShootPoint.position, ShootPoint.rotation);
 			fakels--;
 			if(fakels <= 0)
@@ -127,6 +147,23 @@ public class Player : MonoBehaviour
 	public void takeDamage(int damage)
 	{
 		Health -= damage;
+	}
+	
+	public void Death()
+	{
+		Instantiate(DeathParticles, transform.position, Quaternion.identity);
+		DeathPanel.SetActive(true);
+		Skin.SetActive(false);
+		
+	}
+	
+	// Sent when another object enters a trigger collider attached to this object (2D physics only).
+	protected void OnTriggerEnter2D(Collider2D other)
+	{
+		if(other.tag == "Boss")
+		{
+			Death();
+		}
 	}
 	// Sent when another object enters a trigger collider attached to this object (2D physics only).
 	protected void OnTriggerStay2D(Collider2D other)
@@ -162,6 +199,7 @@ public class Player : MonoBehaviour
 					fakelon.SetActive(true);
 					ruka.SetActive(false);
 					toFireFakelText.SetActive(false);
+					takingFire = true;
 				}
 			}
 			
@@ -172,6 +210,7 @@ public class Player : MonoBehaviour
 			
 		}
 	}
+	
 	
 	// Sent when another object leaves a trigger collider attached to this object (2D physics only).
 	protected void OnTriggerExit2D(Collider2D other)

@@ -2,61 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnowMan : MonoBehaviour
+public class Boss : MonoBehaviour
 {
-	public float speed, distanceToCheck;
 	private bool facingRiht;
-	private bool isRunningAfter;
-	public LayerMask WhatIsSolid;
-	
-	public int direction;
 	private Player player;
 	
 	private Vector3 difference;
 	
 	private float rotz;
 	public float offset;
-	private bool Found = false, Rotated = false;
+	
+	public float speed;
+	public int health;
+	
+	private bool Rotated = false;
+	
     // Start is called before the first frame update
     void Start()
-	{
-		player = FindObjectOfType<Player>();
+    {
+	    player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
     void Update()
-	{
-
-		transform.Translate(Vector2.left*speed*Time.deltaTime);
-		if(!Found) check();
-		if(Found)
-		{
-			goToPlayer();
-		}
-	    
+    {
+	    transform.Translate(Vector2.left*speed*Time.deltaTime);
+	    goToPlayer();
     }
     
-	// Sent when another object enters a trigger collider attached to this object (2D physics only).
-	protected void OnTriggerEnter2D(Collider2D other)
+	public void takeDamage(int damage)
 	{
-		if(other.tag == "Turn")
-		{
-			if(Found == false) flip();
-		}
-	}
-	
-	public void check()
-	{
-		RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, transform.right, distanceToCheck);
-		foreach(RaycastHit2D hit in hits)
-		{
-			
-			if(hit.collider.GetComponent<Player>() != null)
-			{
-				Found = true;
-			}
-		}
-		
+		health -= damage;
 	}
 	
 	public void goToPlayer()
@@ -81,10 +57,8 @@ public class SnowMan : MonoBehaviour
 				Rotated = true;
 			}
 		}
-		
 
 	}
-	
 	public void flip()
 	{
 		facingRiht = !facingRiht;

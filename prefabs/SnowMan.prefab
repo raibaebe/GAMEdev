@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  distanceToCheck: 0
+  distanceToCheck: 5
   WhatIsSolid:
     serializedVersion: 2
     m_Bits: 0

@@ -8,6 +8,7 @@ public class snowfall : MonoBehaviour
 	public LayerMask WhatIsSolid;
 	
 	public GameObject Particles;
+	public int damage;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class snowfall : MonoBehaviour
 	    	
 	    	if(hitinfo.collider.GetComponent<Player>() != null)
 	    	{
-	    		hitinfo.collider.GetComponent<Player>().takeDamage(1);
+	    		hitinfo.collider.GetComponent<Player>().takeDamage(damage);
 	    	}
 	    }
 
