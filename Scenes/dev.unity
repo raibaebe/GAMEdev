@@ -1537,6 +1537,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1237805923046554153, guid: 576f3964eeaa6274baa385fe76e0fd2d, type: 3}
+      propertyPath: distanceToCheck
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237805923046554153, guid: 576f3964eeaa6274baa385fe76e0fd2d, type: 3}
+      propertyPath: WhatIsSolid.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1393569950321044972, guid: 576f3964eeaa6274baa385fe76e0fd2d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.31

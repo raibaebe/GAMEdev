@@ -12,9 +12,15 @@ public class SnowMan : MonoBehaviour
 	public int direction;
 	private Player player;
 	
+	private Vector3 difference;
+	
+	private float rotz;
+	public float offset;
+	private bool Found = false;
     // Start is called before the first frame update
     void Start()
-    {
+	{
+		player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
@@ -23,6 +29,10 @@ public class SnowMan : MonoBehaviour
 
 		transform.Translate(Vector2.left*speed*Time.deltaTime);
 		check();
+		if(Found)
+		{
+			goToPlayer();
+		}
 	    
     }
     
@@ -31,19 +41,19 @@ public class SnowMan : MonoBehaviour
 	{
 		if(other.tag == "Turn")
 		{
-			flip();
+			if(Found == false) flip();
 		}
 	}
 	
 	public void check()
 	{
-		RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, transform.forward, distanceToCheck);
+		RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, transform.right, distanceToCheck);
 		foreach(RaycastHit2D hit in hits)
 		{
 			
-			if(hit != null && hit.collider.GetComponent<Player>() != null)
+			if(hit.collider.GetComponent<Player>() != null)
 			{
-				speed = 0;
+				Found = true;
 			}
 		}
 		
@@ -51,7 +61,18 @@ public class SnowMan : MonoBehaviour
 	
 	public void goToPlayer()
 	{
-		
+		difference = player.transform.position - transform.position;
+		rotz = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+		transform.rotation = Quaternion.Euler(0f, 0f, rotz + offset);
+		//if(difference.x > 0 && facingRiht == false)
+		//{
+		//	flip();
+		//}
+		//else if(difference.x < 0 && facingRiht == true)
+		//{
+		//	flip();
+		//}
+
 	}
 	
 	public void flip()

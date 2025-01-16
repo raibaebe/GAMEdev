@@ -233,12 +233,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597f6ce26d604e946b7691a5f519a93a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   distanceToCheck: 0
   WhatIsSolid:
     serializedVersion: 2
     m_Bits: 0
   direction: 0
+  offset: 0
 --- !u!70 &7393835657426590100
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
