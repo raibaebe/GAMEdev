@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  initialTemperature: 120
   Health: 20
   walkAnim: 'walkimg '
   idleAnim: Idle
@@ -228,7 +229,8 @@ MonoBehaviour:
   fakelon: {fileID: 2985101252896755238}
   ruka: {fileID: 2886473703906901170}
   toTreeFakelText: {fileID: 2484552319124298579, guid: 505e25c57e470d14fa16f375d8a5df44, type: 3}
-  ShootPoint: {fileID: 8836072450309194394}
+  toFireFakelText: {fileID: 0}
+  ShootPoint: {fileID: 1640748273079321911}
   fakelAsBullet: {fileID: 1791968366246873452, guid: 70eaff815c73c0d4b931d79d375bfb40, type: 3}
 --- !u!50 &7111550703757510388
 Rigidbody2D:

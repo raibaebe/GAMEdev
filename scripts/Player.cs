@@ -7,19 +7,22 @@ public class Player : MonoBehaviour
 {
 	private float moveInput, verInput;
 	private Rigidbody2D rb;
-	public float speed;
+	public float speed, initialTemperature;
 	public int Health;
 	private Animator anim;
 	[SerializeField] string walkAnim, idleAnim;
 	
-	[SerializeField] GameObject fakeloff, fakelon, ruka, toTreeFakelText;
+	[SerializeField] GameObject fakeloff, fakelon, ruka, toTreeFakelText, toFireFakelText;
 	[SerializeField] Transform ShootPoint; 
 	[SerializeField] GameObject fakelAsBullet;
 	
-	private short counterToDownTree = 0;
 	
 	private int fakels = 0;
 	private bool canShoot = false, facingRiht = false, lookingUp = false;
+	private short counterToDownTree = 0;
+
+	
+	private float temperature;
 	// Start is called before the first frame update
     void Start()
 	{
@@ -31,6 +34,11 @@ public class Player : MonoBehaviour
 	    
 		anim.Play(idleAnim);
 		toTreeFakelText.SetActive(false);
+		toFireFakelText.SetActive(false);
+		
+		temperature = initialTemperature;
+		
+		StartCoroutine(decreaseTemp());
     }
 
     // Update is called once per frame
@@ -107,6 +115,9 @@ public class Player : MonoBehaviour
 			if(fakels <= 0)
 			{
 				canShoot = false;
+				fakeloff.SetActive(false);
+				fakelon.SetActive(false);
+				ruka.SetActive(true);
 			}
 		}
 	}
@@ -115,18 +126,18 @@ public class Player : MonoBehaviour
 	{
 		Health -= damage;
 	}
-	
 	// Sent when another object enters a trigger collider attached to this object (2D physics only).
 	protected void OnTriggerStay2D(Collider2D other)
 	{
 		if(other.tag == "Tree")
 		{
+	        
 			toTreeFakelText.SetActive(true);
 			if(Input.GetKeyDown(KeyCode.F))
 			{
 				counterToDownTree++;
 			}
-			if(counterToDownTree == 3)
+			if(counterToDownTree >= 2)
 			{
 				counterToDownTree = 0;
 				fakeloff.SetActive(true);
@@ -138,6 +149,26 @@ public class Player : MonoBehaviour
 			}
 			
 		}
+		
+		if(other.tag == "Fire")
+		{
+			if(canShoot)
+			{
+				toFireFakelText.SetActive(true);
+				if(Input.GetKeyDown(KeyCode.F))
+				{
+					fakelon.SetActive(true);
+					ruka.SetActive(false);
+					toFireFakelText.SetActive(false);
+				}
+			}
+			
+			if(temperature < initialTemperature)
+			{
+				temperature++;
+			}
+			
+		}
 	}
 	
 	// Sent when another object leaves a trigger collider attached to this object (2D physics only).
@@ -146,6 +177,10 @@ public class Player : MonoBehaviour
 		if(other.tag == "Tree")
 		{
 			toTreeFakelText.SetActive(false);
+		}
+		if(other.tag == "Fire")
+		{
+			toFireFakelText.SetActive(false);
 		}
 	}
 	
@@ -162,6 +197,15 @@ public class Player : MonoBehaviour
 		Scaler.x *= -1;
 		transform.localScale = Scaler;
 		
+	}
+	
+	IEnumerator decreaseTemp()
+	{
+		while(true)
+		{
+			temperature--;
+			yield return new WaitForSeconds(1f);
+		}
 	}
 
 }
