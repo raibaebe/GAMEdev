@@ -131,3 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   LifeTime: 4
+  distanceToPlayer: 1
+  WhatIsSolid:
+    serializedVersion: 2
+    m_Bits: 1
+  Particles: {fileID: 4200386192366410350, guid: 970a9b3c576d2b74abe8bc8b6f7999d8, type: 3}

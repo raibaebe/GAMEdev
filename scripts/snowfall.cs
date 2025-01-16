@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class snowfall : MonoBehaviour
 {
-	public float speed, LifeTime;
+	public float speed, LifeTime, distanceToPlayer;
+	public LayerMask WhatIsSolid;
+	
+	public GameObject Particles;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +18,18 @@ public class snowfall : MonoBehaviour
     void Update()
     {
 	    transform.Translate(Vector2.right*speed*Time.deltaTime);
+	    RaycastHit2D hitinfo = Physics2D.Raycast(transform.position, transform.up, distanceToPlayer, WhatIsSolid);
 	    
+	    if(hitinfo.collider != null)
+	    {
+	    	Instantiate(Particles, transform.position, Quaternion.identity);
+	    	Destroy(gameObject);
+	    	
+	    	if(hitinfo.collider.GetComponent<Player>() != null)
+	    	{
+	    		hitinfo.collider.GetComponent<Player>().takeDamage(1);
+	    	}
+	    }
+
     }
 }

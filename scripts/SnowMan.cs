@@ -5,7 +5,7 @@ using UnityEngine;
 public class SnowMan : MonoBehaviour
 {
 	public float speed, distanceToCheck;
-	public bool facingRiht;
+	private bool facingRiht;
 	private bool isRunningAfter;
 	public LayerMask WhatIsSolid;
 	
@@ -21,7 +21,7 @@ public class SnowMan : MonoBehaviour
     void Update()
 	{
 
-		transform.Translate(Vector2.right*speed*Time.deltaTime);
+		transform.Translate(Vector2.left*speed*Time.deltaTime);
 		check();
 	    
     }
