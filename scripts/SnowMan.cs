@@ -10,6 +10,8 @@ public class SnowMan : MonoBehaviour
 	public LayerMask WhatIsSolid;
 	
 	public int direction;
+	private Player player;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +46,11 @@ public class SnowMan : MonoBehaviour
 				speed = 0;
 			}
 		}
+		
+	}
+	
+	public void goToPlayer()
+	{
 		
 	}
 	

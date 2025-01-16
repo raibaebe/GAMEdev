@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 	private float moveInput, verInput;
 	private Rigidbody2D rb;
 	public float speed;
+	public int Health;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,11 @@ public class Player : MonoBehaviour
 		verInput = Input.GetAxis("Vertical");
 		rb.velocity = new Vector2(moveInput * speed, verInput*speed);
 		//anim.Play(walkAnim);
+	}
+	
+	public void takeDamage(int damage)
+	{
+		Health -= damage;
 	}
 
 }
