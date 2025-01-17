@@ -17,17 +17,28 @@ public class Boss : MonoBehaviour
 	
 	private bool Rotated = false;
 	
+	
+	public GameObject WinPanel, WinParticle;
+	
     // Start is called before the first frame update
     void Start()
     {
 	    player = FindObjectOfType<Player>();
     }
+	 
 
     // Update is called once per frame
     void Update()
-    {
-	    transform.Translate(Vector2.left*speed*Time.deltaTime);
-	    goToPlayer();
+	{
+		if(player != null)
+		{
+			 transform.Translate(Vector2.left*speed*Time.deltaTime);
+			 goToPlayer();
+		}
+		if(health <= 0)
+		{
+			Death();
+		}
     }
     
 	public void takeDamage(int damage)
@@ -59,6 +70,14 @@ public class Boss : MonoBehaviour
 		}
 
 	}
+	
+	public void Death()
+	{
+		WinPanel.SetActive(true);
+		Instantiate(WinParticle, transform.position, Quaternion.identity);
+		Destroy(gameObject);
+	}
+	
 	public void flip()
 	{
 		facingRiht = !facingRiht;

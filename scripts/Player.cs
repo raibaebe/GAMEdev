@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
 		toTreeFakelText.SetActive(false);
 		toFireFakelText.SetActive(false);
 		
+		DeathPanel.SetActive(false);
 		temperature = initialTemperature;
 		
 		StartCoroutine(decreaseTemp());
@@ -153,7 +154,9 @@ public class Player : MonoBehaviour
 	{
 		Instantiate(DeathParticles, transform.position, Quaternion.identity);
 		DeathPanel.SetActive(true);
-		Skin.SetActive(false);
+		//Destroy(gameObject);
+		gameObject.SetActive(false);
+		//GetComponent<SpriteRenderer>().enabled = false;
 		
 	}
 	

@@ -32,6 +32,7 @@ public class FakelAsBullet : MonoBehaviour
 			}
 			else if(hitinfo.collider.gameObject.GetComponent<Boss>() != null)
 			{
+				Destroy(gameObject);
 				hitinfo.collider.gameObject.GetComponent<Boss>().takeDamage(1);
 			}
 		}

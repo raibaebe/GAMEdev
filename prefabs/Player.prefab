@@ -232,6 +232,13 @@ MonoBehaviour:
   toFireFakelText: {fileID: 0}
   ShootPoint: {fileID: 1640748273079321911}
   fakelAsBullet: {fileID: 1791968366246873452, guid: 70eaff815c73c0d4b931d79d375bfb40, type: 3}
+  fakelsText: {fileID: 0}
+  healthText: {fileID: 0}
+  temperatureText: {fileID: 0}
+  temperature: 0
+  DeathParticles: {fileID: 4200386192366410350, guid: c1b951459d1de744f9683b2f967d3762, type: 3}
+  DeathPanel: {fileID: 0}
+  Skin: {fileID: 0}
 --- !u!50 &7111550703757510388
 Rigidbody2D:
   serializedVersion: 4

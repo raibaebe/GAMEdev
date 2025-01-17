@@ -32,10 +32,10 @@ public class SnowManShoot : MonoBehaviour
 		    transform.rotation = Quaternion.Euler(0f, 0f, rotz + offset);
 
 	    }
-	    else
-	    {
-	    	player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-	    }
+	    //else
+	    //{
+	    //	player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+	    //}
 	    
 	    if(timeBtwShots <= 0)
 	    {
