@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 	private Animator anim;
 	[SerializeField] string walkAnim, idleAnim;
 	
-	[SerializeField] GameObject fakeloff, fakelon, ruka, toTreeFakelText, toFireFakelText;
+	[SerializeField] GameObject fakeloff, fakelon, ruka, toTreeFakelText, toFireFakelText, toChestOpenText;
 	[SerializeField] Transform ShootPoint; 
 	[SerializeField] GameObject fakelAsBullet;
 	
@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
 		anim.Play(idleAnim);
 		toTreeFakelText.SetActive(false);
 		toFireFakelText.SetActive(false);
+		toChestOpenText.SetActive(false);
 		
 		DeathPanel.SetActive(false);
 		temperature = initialTemperature;
@@ -212,6 +213,15 @@ public class Player : MonoBehaviour
 			}
 			
 		}
+		
+		if(other.tag == "Chest")
+		{
+			toChestOpenText.SetActive(true);
+			if(Input.GetKey(KeyCode.F))
+			{
+				other.GetComponent<Chest>().Open();
+			}
+		}
 	}
 	
 	
@@ -225,6 +235,10 @@ public class Player : MonoBehaviour
 		if(other.tag == "Fire")
 		{
 			toFireFakelText.SetActive(false);
+		}
+		if(other.tag == "Chest")
+		{
+			toChestOpenText.SetActive(false);
 		}
 	}
 	
