@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c11d832bb301254fbffd1c16d115654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 25
   LifeTime: 3
   distanceToEnemy: 0
   WhatIsSolid:
