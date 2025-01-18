@@ -50,7 +50,7 @@ MonoBehaviour:
   distanceToEnemy: 0
   WhatIsSolid:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   Particles: {fileID: 4200386192366410350, guid: 6597c3f148390b84fa14579999e365fe, type: 3}
   score: {fileID: 0}
 --- !u!1 &4403830964088098565
