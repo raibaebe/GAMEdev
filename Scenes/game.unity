@@ -3902,7 +3902,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &409662207
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11760,6 +11760,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Fire press F '
       objectReference: {fileID: 0}
+    - target: {fileID: 8432639834020132615, guid: 2e2c9a8f29a622f448744ee6893de1a1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9150470732580396626, guid: 2e2c9a8f29a622f448744ee6893de1a1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11949,6 +11953,10 @@ PrefabInstance:
     - target: {fileID: 8432639834020132615, guid: 2e2c9a8f29a622f448744ee6893de1a1, type: 3}
       propertyPath: m_Name
       value: Chest press F
+      objectReference: {fileID: 0}
+    - target: {fileID: 8432639834020132615, guid: 2e2c9a8f29a622f448744ee6893de1a1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9150470732580396626, guid: 2e2c9a8f29a622f448744ee6893de1a1, type: 3}
       propertyPath: m_Pivot.x
@@ -19156,6 +19164,10 @@ PrefabInstance:
     - target: {fileID: 2484552319124298579, guid: 505e25c57e470d14fa16f375d8a5df44, type: 3}
       propertyPath: m_Name
       value: Tree press F
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484552319124298579, guid: 505e25c57e470d14fa16f375d8a5df44, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2990714291637907974, guid: 505e25c57e470d14fa16f375d8a5df44, type: 3}
       propertyPath: m_Pivot.x

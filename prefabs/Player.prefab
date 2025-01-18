@@ -230,8 +230,10 @@ MonoBehaviour:
   ruka: {fileID: 2886473703906901170}
   toTreeFakelText: {fileID: 2484552319124298579, guid: 505e25c57e470d14fa16f375d8a5df44, type: 3}
   toFireFakelText: {fileID: 0}
+  toChestOpenText: {fileID: 0}
   ShootPoint: {fileID: 1640748273079321911}
-  fakelAsBullet: {fileID: 1791968366246873452, guid: 70eaff815c73c0d4b931d79d375bfb40, type: 3}
+  fakelAsBullet: {fileID: 1791968366246873452, guid: f41e0ea27c3813c46b125795f0c04667, type: 3}
+  fireAsBullet: {fileID: 1791968366246873452, guid: 70eaff815c73c0d4b931d79d375bfb40, type: 3}
   fakelsText: {fileID: 0}
   healthText: {fileID: 0}
   temperatureText: {fileID: 0}

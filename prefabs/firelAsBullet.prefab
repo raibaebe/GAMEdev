@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7375046501472918288}
   - component: {fileID: 53599392531509135}
   m_Layer: 0
-  m_Name: fakelAsBullet
+  m_Name: firelAsBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,13 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c11d832bb301254fbffd1c16d115654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
-  LifeTime: 6
+  speed: 10
+  LifeTime: 3
   distanceToEnemy: 0
   WhatIsSolid:
     serializedVersion: 2
     m_Bits: 8
-  Particles: {fileID: 4200386192366410350, guid: 970a9b3c576d2b74abe8bc8b6f7999d8, type: 3}
+  Particles: {fileID: 4200386192366410350, guid: 6597c3f148390b84fa14579999e365fe, type: 3}
   score: 0
 --- !u!1 &4403830964088098565
 GameObject:
@@ -78,13 +78,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4403830964088098565}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.035608172, y: 0.02634883, z: 0.70620966, w: 0.7066157}
+  m_LocalRotation: {x: -0.043828152, y: -0.006423724, z: 0.002604526, w: 0.9990151}
   m_LocalPosition: {x: 0.3496, y: 0.1252, z: 0.0037}
   m_LocalScale: {x: 0.81150323, y: 0.9491057, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7375046501472918288}
-  m_LocalEulerAnglesHint: {x: -5.022, y: -0.751, z: 90}
+  m_LocalEulerAnglesHint: {x: -5.022, y: -0.751, z: 0.332}
 --- !u!212 &8690255195309648767
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -126,7 +126,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0d12417a977799740b42cd9ba9d906c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c0b3f65e4e372b347a46ac38bff1a70b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 	
 	[SerializeField] GameObject fakeloff, fakelon, ruka, toTreeFakelText, toFireFakelText, toChestOpenText;
 	[SerializeField] Transform ShootPoint; 
-	[SerializeField] GameObject fakelAsBullet;
+	[SerializeField] GameObject fakelAsBullet, fireAsBullet;
 	
 	
 	private int fakels = 0;
@@ -114,9 +114,9 @@ public class Player : MonoBehaviour
 		{
 			Death();
 		}
-		if(takingFire == true)
+		if(takingFire == true && temperature < initialTemperature)
 		{
-			temperature += 0.05f;
+			temperature += 0.02f;
 		}
 	}
     
@@ -133,16 +133,28 @@ public class Player : MonoBehaviour
 	{
 		if(Input.GetKeyDown(KeyCode.Mouse0))
 		{
-			if(takingFire) takingFire = false;
-			Instantiate(fakelAsBullet, ShootPoint.position, ShootPoint.rotation);
-			fakels--;
-			if(fakels <= 0)
+			if(takingFire)
 			{
-				canShoot = false;
-				fakeloff.SetActive(false);
+				Instantiate(fireAsBullet,ShootPoint.position, ShootPoint.rotation);
 				fakelon.SetActive(false);
-				ruka.SetActive(true);
+				fakeloff.SetActive(true);
+				takingFire = false;
+				fakels--;
 			}
+			else
+			{
+				Instantiate(fakelAsBullet, ShootPoint.position, ShootPoint.rotation);
+				fakels--;
+				
+			}
+			if(fakels <= 0)
+				{
+					canShoot = false;
+					fakeloff.SetActive(false);
+					fakelon.SetActive(false);
+					ruka.SetActive(true);
+				}
+			
 		}
 	}
 	
