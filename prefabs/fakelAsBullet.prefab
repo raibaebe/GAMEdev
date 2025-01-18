@@ -50,7 +50,7 @@ MonoBehaviour:
   distanceToEnemy: 0
   WhatIsSolid:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   Particles: {fileID: 4200386192366410350, guid: 970a9b3c576d2b74abe8bc8b6f7999d8, type: 3}
   score: {fileID: 0}
 --- !u!1 &4403830964088098565
@@ -79,9 +79,9 @@ Transform:
   m_GameObject: {fileID: 4403830964088098565}
   serializedVersion: 2
   m_LocalRotation: {x: -0.035608172, y: 0.02634883, z: 0.70620966, w: 0.7066157}
-  m_LocalPosition: {x: 0.3496, y: 0.1252, z: 0.0037}
-  m_LocalScale: {x: 0.81150323, y: 0.9491057, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.028, y: -0.02, z: 0.012}
+  m_LocalScale: {x: 2.35, y: 2.7484775, z: 2.8958602}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7375046501472918288}
   m_LocalEulerAnglesHint: {x: -5.022, y: -0.751, z: 90}
