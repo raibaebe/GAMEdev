@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad42caf3cf48f349993796e6fa0a81e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 20
   LifeTime: 4
   distanceToPlayer: 1
   WhatIsSolid:
